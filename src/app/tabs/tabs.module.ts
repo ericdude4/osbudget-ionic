@@ -3,6 +3,7 @@ import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { LoginComponent } from '../login/login.component';
 
 import { TabsPageRoutingModule } from './tabs.router.module';
 
@@ -15,6 +16,9 @@ import { TabsPage } from './tabs.page';
     FormsModule,
     TabsPageRoutingModule
   ],
-  declarations: [TabsPage]
+  declarations: [
+    TabsPage,
+    LoginComponent
+  ]
 })
-export class TabsPageModule {}
+export class TabsPageModule { }
