@@ -15,7 +15,5 @@
     <ion-label>Password</ion-label>
     <ion-input required name="password" type="password" position="floating" [(ngModel)]="password"></ion-input>
   </ion-item>
-
-  <button (click)="login()" *ngIf="!authService.isLoggedIn">Login</button>
-  <button (click)="logout()" *ngIf="authService.isLoggedIn">Logout</button>
+  <ion-button color="primary" (click)="login()">Log in</ion-button>
 </ion-content>

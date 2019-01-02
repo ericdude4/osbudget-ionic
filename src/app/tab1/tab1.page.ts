@@ -12,7 +12,7 @@ export class Tab1Page {
   public users: DocumentCollection<User>;
 
   public constructor(private usersService: UserService) {
-    usersService
+    this.usersService
       .all()
       .subscribe(users => (this.users = users));
   }

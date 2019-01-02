@@ -9,7 +9,7 @@ import { AuthService } from '../auth/auth.service';
 /** Pass untouched request through to the next request handler. */
 
 @Injectable()
-export class AuthInterceptor implements HttpInterceptor {
+export class HeaderInterceptor implements HttpInterceptor {
 
     constructor(public authService: AuthService) {}
 

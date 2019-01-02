@@ -19,24 +19,22 @@ export class AuthService {
   private tokenLoaded: boolean = false;
 
   constructor(private storage: Storage, private http: HttpClient) {
-    storage.get('access_token').then((access_token) => {
-      this.accessToken = access_token
-    });
   }
 
   isLoggedIn(): Promise<boolean> {
     return new Promise<boolean>((resolve, reject) => {
-      if (typeof this.accessToken == 'undefined') {
-        this.storage.get('access_token').then((token) => {
-          // TODO: check the JWT to see if expired
-          console.log('the token is ' + token)
-          resolve(true)
-        })
-      } else if (this.accessToken != null) {
+      if (this.accessToken != null) {
         resolve(true)
       } else {
-        console.log('no token stored')
-        reject()
+        this.storage.get('access_token').then((token) => {
+          // TODO: check the JWT to see if expired
+          this.accessToken = token
+          console.log('the token is ' + token)
+          if (this.accessToken == null)
+            resolve(false)
+          else
+            resolve(true)
+        })
       }
     })
 
