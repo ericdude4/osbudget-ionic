@@ -27,9 +27,7 @@ export class AuthService {
         resolve(true)
       } else {
         this.storage.get('access_token').then((token) => {
-          // TODO: check the JWT to see if expired
           this.accessToken = token
-          console.log('the token is ' + token)
           if (this.accessToken == null)
             resolve(false)
           else
