@@ -1,11 +1,7 @@
 import { Injectable } from '@angular/core';
 
-import { Observable, of } from 'rxjs';
-import { tap, delay } from 'rxjs/operators';
-
 import { Storage } from '@ionic/storage';
 import { HttpClient } from '@angular/common/http';
-import { resolve } from 'path';
 
 @Injectable({
   providedIn: 'root',
